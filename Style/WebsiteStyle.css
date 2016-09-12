@@ -1,0 +1,191 @@
+@charset "utf-8";
+	/* CSS Document */
+
+#ContentBackground {
+	width: 1000px;
+	height: 1100px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+.box {
+  background-color: #FFF;
+  border: 1px solid #666;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #ccc;
+  padding: 10px;
+	margin-top:5px
+}
+
+.clear {
+    clear: both;
+}
+
+#index_features .block {
+    display: inline;
+    float: left;
+    width: 260px;
+    margin: 0 30px 0 0;
+    padding: 0
+}
+
+#Container2 {
+	margin: 10px;
+	float: left;
+}
+
+#tagline_right {
+	float: right;
+}
+
+#tagline_left {
+	float: left;
+}
+
+#breadcrumb {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: 10px 0
+	position: relative;
+  display: block;
+  width: 900px;
+  margin: 0 auto
+}
+
+#breadcrumb ul li.current a {
+  text-decoration: underline
+}
+
+#breadcrumb ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+#breadcrumb ul li, .sidebar .latestnews p {
+    display: inline
+}
+
+#gallery {
+  position: relative;
+  display: block;
+  width: 880px;
+  padding-bottom: 10px;
+  margin: 10px auto
+}
+
+#gallery li {
+  display: block;
+  float: left;
+  width: 190px;
+  margin: 0 15px 15px 0;
+  padding: 0
+}
+
+#gallery li a img {
+  display: block;
+  width: 150px;
+	height:160px;
+  border: 10px solid #e0e0e0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  transition: all 1s ease-out
+}
+
+#gallery li a:hover img {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #b4b4b4;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  transition: all 1s ease-out
+}
+
+#singleproductview {
+	display: block;
+  border: 10px solid #e0e0e0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  transition: all 1s ease-out
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+body {
+	font-family: "Comic Sans MS", cursive;
+	font-size: 14px;
+	color: rgb(0, 0, 0);
+	background: #eee url(../images/bg.png) repeat;
+}
+
+h1 {
+	font-family: "Comic Sans MS";
+	font-size: 24px;
+}
+
+h2 {
+	font-family: "Comic Sans MS";
+	font-size: 24px;
+	font-style: italic;
+	opacity: 0.8;
+}
+
+h3 {
+	font-family: "Comic Sans MS";
+	font-size: 24px;
+	text-align: center;
+}
+
+ul {
+	overflow: hidden;
+}
+
+table {
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th {
+	width: 20%;
+	height: 50px;
+	font-size: 24px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+tr, td {
+	width: 12.5%;
+	height: 30px;
+	font-size: 18px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+td:hover{background-color:rgb(131, 122, 255)}
+
+#Content {
+	margin-left: 50px;
+	position: center;
+	height: 800px;
+	width: 900px;
+}

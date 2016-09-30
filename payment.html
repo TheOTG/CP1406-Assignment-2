@@ -107,12 +107,7 @@ function updateTotals() {
       subtotal=subtotal+ordData[i].extprice
    }
    document.ordform.subtotal.value = currency(subtotal,10)
-   salestax=0
-   if (document.ordform.Taxable.checked) {
-      salestax = SalesTaxRate*subtotal
-   }
-   document.ordform.salestax.value = currency(salestax,10)
-   document.ordform.grandtotal.value = currency(subtotal+salestax,10)
+   
 }
 function copyAddress() {
    document.ordform.shipName.value=document.ordform.billName.value

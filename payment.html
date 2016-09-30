@@ -62,52 +62,45 @@ logo goes here
 
 
 <script language="javascript">
-
-var RowsInForm = 6       
-var ProductsInList = 16    
-var ProdSubscript = 0       
-
+var RowsInForm = 6
+var ProductsInList = 16
+var ProdSubscript = 0
 function MakeArray(n) {
    this.length = n
    for (var i=1;i<=n;i++) {this[i]=0}
    return this
 }
-
 function BuildZeroArray(n) {
    this.length = n
    for (var i=0;i<=n;i++) {this[i]=0}
    return this
 }
-
 function prodobj(name, unitprice) {
    this.name = name
    this.unitprice = unitprice
 }
-
 function ordobj(prodsub, qty, unitprice, extprice) {
    this.prodsub = prodsub
    this.qty = qty
    this.unitprice = unitprice
    this.extprice = extprice
 }
-
 function updateRow(rownum){
    var exeLine='ProdSubscript=document.ordform.prodchosen'+rownum+'.selectedIndex'
    eval(exeLine)
    ordData[rownum].prodsub=ProdSubscript
    var exeLine='tempqty=document.ordform.qty'+rownum+'.value'
    eval(exeLine)
-   ordData[rownum].qty=tempqty-0 
+   ordData[rownum].qty=tempqty-0
    ordData[rownum].unitprice=prodlist[ProdSubscript].unitprice
    ordData[rownum].extprice=(ordData[rownum].qty)*ordData[rownum].unitprice
    var exeLine='document.ordform.unitprice'+rownum+'.value=currency(ordData['+rownum+'].unitprice,10)'
    eval (exeLine)
-   var 
+   var
  exeLine='document.ordform.extprice'+rownum+'.value=currency(ordData['+rownum+'].extprice,10)'
    eval(exeLine)
    updateTotals()
 }
-
 function updateTotals() {
    var subtotal = 0
    for (var i=1;i<=RowsInForm;i++) {
@@ -121,7 +114,6 @@ function updateTotals() {
    document.ordform.salestax.value = currency(salestax,10)
    document.ordform.grandtotal.value = currency(subtotal+salestax,10)
 }
-
 function copyAddress() {
    document.ordform.shipName.value=document.ordform.billName.value
    document.ordform.shipCompany.value=document.ordform.billCompany.value
@@ -131,7 +123,6 @@ function copyAddress() {
    document.ordform.shipPhone.value=document.ordform.billPhone.value
    document.ordform.shipEmail.value=document.ordform.billEmail.value
 }
-
 function currency(anynum,width) {
    anynum=eval(anynum)
    workNum=Math.abs((Math.round(anynum*100)/100));workStr=""+workNum
@@ -139,24 +130,21 @@ function currency(anynum,width) {
    dStr=workStr.substr(0,workStr.indexOf("."));dNum=dStr-0
    pStr=workStr.substr(workStr.indexOf("."))
    while (pStr.length<3){pStr+="0"}
-
    if (dNum>=1000) {
       dLen=dStr.length
       dStr=parseInt(""+(dNum/1000))+","+dStr.substring(dLen-3,dLen)
    }
-
    if (dNum>=1000000) {
       dLen=dStr.length
       dStr=parseInt(""+(dNum/1000000))+","+dStr.substring(dLen-7,dLen)
    }
-   retval=dStr+pStr 
+   retval=dStr+pStr
    if (anynum < 0) {
       retval=retval.substring(1,retval.length)
-      retval="("+retval+")"        
+      retval="("+retval+")"
    }
    retval = "$"+retval
    while (retval.length<width){retval=" "+retval}
-
    return retval
 }
 </script>
@@ -165,32 +153,29 @@ function currency(anynum,width) {
 
 
 <script language="JavaScript">
-
-prodlist = new BuildZeroArray(ProductsInList)  
-
+prodlist = new BuildZeroArray(ProductsInList)
 prodlist[0] = new prodobj('-none-',0)
-prodlist[1] = new prodobj('Orange Swimming Trunks',10.00)
-prodlist[2] = new prodobj('Blue Skateboard Vest',10.50)
-prodlist[3] = new prodobj('Green Shorts',11.00)
-prodlist[4] = new prodobj('Bright Orange Vest',11.99)
-prodlist[5] = new prodobj('Feather Dress',12.00)
-prodlist[6] = new prodobj('Strawberry Vest',14.99)
-prodlist[7] = new prodobj('White Dress',25.00)
-prodlist[8] = new prodobj('Blue Striped Vest',28.00)
-prodlist[9] = new prodobj('Johnny & June Shirt',18.00)
-prodlist[10] = new prodobj('Napoleon & Marie Shirt',25.00)
-prodlist[11] = new prodobj('100% Pima Cotton T-Shirt',15.00)
-prodlist[12] = new prodobj('Jimi Jeans',20.00)
-prodlist[13] = new prodobj('Mick & Bianca Jeans',16.00)
-prodlist[14] = new prodobj('Frida & Diego Jeans',16.00)
-prodlist[15] = new prodobj('Dali & Gala Jeans',18.00)
-prodlist[16] = new prodobj('Kurt & Courtney Jeans',25.00)
-
+prodlist[1] = new prodobj('Boy Skull Short',35.00)
+prodlist[2] = new prodobj('Boys Skate Vest',50.00)
+prodlist[3] = new prodobj('Boy Sub Short',35.00)
+prodlist[4] = new prodobj('Boys Skull Vest',65.00)
+prodlist[5] = new prodobj('Feather Dress',60.00)
+prodlist[6] = new prodobj('Strawberry Vest',35.00)
+prodlist[7] = new prodobj('Cheese Dress',60.00)
+prodlist[8] = new prodobj('Spectacles Vest',35.00)
+prodlist[9] = new prodobj('Johnny & June Shirt',75.00)
+prodlist[10] = new prodobj('Napoleon & Marie Shirt',50.00)
+prodlist[11] = new prodobj('100% Pima Cotton T-Shirt',20.00)
+prodlist[12] = new prodobj('Jimi Jeans',75.00)
+prodlist[13] = new prodobj('Mick & Bianca Jeans',75.00)
+prodlist[14] = new prodobj('Frida & Diego Jeans',75.00)
+prodlist[15] = new prodobj('Dali & Gala Jeans',75.00)
+prodlist[16] = new prodobj('Kurt & Courtney Jeans',75.00)
 ordData = new MakeArray(RowsInForm)
 for (var i=1; i<= RowsInForm; i++) {
    ordData[i] = new ordobj(0,0,0,0)
 }
-</script> 
+</script>
 </p>
 <form name="ordform" metod="POST" action="someHandler">
 <table align="center" border="1" bgcolor="#800000"><tbody><tr>
